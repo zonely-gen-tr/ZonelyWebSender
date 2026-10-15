@@ -1,10 +1,22 @@
-# TCP (port) ve HTTPS (portless). Portsuz mod gelen TCP portu acmaz.
+# Baglanti turu: portless = Portsuz, port = Portlu.
+# PORTSUZ: Minecraft sunucusu Zonely sitenize HTTPS ile baglanir. Ek port acmaniz gerekmez.
+# PORTLU: Klasik WebSender TCP baglantisidir. Hosting firmanizdan Minecraft portundan
+# farkli bir TCP portu alin; bu portu hosting paneli/firewall uzerinden dis erisime acin.
+# Ardindan Zonely panelinde Portlu secip sunucunun IP adresini, asagidaki socketPort
+# degerini ve socketPassword sifresini ayni sekilde girin.
+# Portlu kullanmak icin asagidaki degeri 'port' yapin. Degisiklikten sonra sunucuyu yeniden baslatin.
 connection-mode: portless
-# Yalnizca Zonely site adresiniz: https://siteadresin.com (sondaki / fark etmez).
+# Yalnizca PORTSUZ modda kullanilir: Zonely sitenizin adresini girin.
+# Ornek: https://siteadresin.com (sondaki / fark etmez). PORTLU modda bos kalabilir.
 relay-url: ""
-# Sunucunuza ait baglanti sifresi. YAML ozel karakterleri icin tirnak kullanin.
+# Her iki modda da kullanilan baglanti sifresi. Zonely panelindeki sifre ile AYNI olmali.
+# En az 12 karakter belirleyin; YAML ozel karakterleri icin tirnak kullanin.
 socketPassword: "BURAYA_EN_AZ_12_KARAKTER_SIFRE"
+# Yalnizca PORTSUZ moddaki HTTPS kontrol araligi (20 tick = yaklasik 1 saniye).
 poll-ticks: 20
+# Yalnizca PORTLU modda kullanilir. Hosting firmanizin actigi TCP portunu buraya yazin.
+# Bu port Minecraft sunucusunun oyun portundan farkli olmali ve disaridan erisilebilmeli.
+# Zonely panelindeki Portlu -> Port alani da bununla ayni olmali.
 socketPort: 9876
 senderPrefix: "&b[ZonelyWebSender]"
 wrongPassword: "Wrong password"
