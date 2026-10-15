@@ -2,9 +2,16 @@
 [IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-cover-v3.png[/IMG]
 [SIZE=5][B]ZonelyWebSender[/B][/SIZE]
 Minecraft sunucuna uzaktan komut ve mesaj gönder.
+Mağaza teslimatlarını, oyuncu ödüllerini ve yönetim işlemlerini sunucuna ulaştır.
 
 [URL='https://github.com/zonely-gen-tr/ZonelyWebSender/releases']JAR İndir[/URL]
+[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/blob/main/docs/AYARLAR.md']Kurulum Rehberi[/URL]
 [/CENTER]
+
+[B]ZonelyWebSender ne işe yarar?[/B]
+ZonelyWebSender, bağlı panelden gönderilen konsol komutlarını Minecraft sunucunda çalıştırır ve sohbet mesajlarını oyuncularına ulaştırır. Portlu ve portsuz bağlantı seçenekleriyle sunucuna uygun bağlantı türünü seçebilirsin.
+
+[B]Sürüm hedefi:[/B] Minecraft 1.8.8 ve üzeri Spigot/Paper; güncel 26.3 serisi dahil.
 
 [IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-features-v3.png[/IMG]
 
@@ -17,4 +24,12 @@ Minecraft sunucuna uzaktan komut ve mesaj gönder.
 
 [IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-setup-v3.png[/IMG]
 
-[B]Kurulum:[/B] JAR'ı plugins klasörüne ekle, config.yml ayarlarını düzenle ve sunucunu yeniden başlat.
+[B]Kurulum[/B]
+[LIST=1]
+[*]Yayınlar sayfasından JAR dosyasını indir.
+[*]JAR'ı sunucunun plugins klasörüne ekle ve sunucuyu bir kez başlat.
+[*]plugins/ZonelyWebSender/config.yml dosyasını aç.
+[*]Portsuz kullanımda bağlantı türünü portless seç; panelinin verdiği HTTPS adresini ve sunucu şifreni gir. Portlu kullanımda port seç; port ve şifreyi panelle aynı ayarla.
+[*]Sunucunu yeniden başlat ve panelden bir deneme komutu gönder.
+[/LIST]
+Portsuz kullanım için panelinin ZonelyWebSender bağlantısını desteklemesi gerekir. Her sunucu için farklı bir şifre kullan.
