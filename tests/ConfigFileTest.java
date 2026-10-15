@@ -34,7 +34,7 @@ public final class ConfigFileTest {
             Path fresh = directory.resolve("fresh.yml");
             prepare(fresh);
             check(Arrays.equals(bundled, Files.readAllBytes(fresh)), "Fresh install copies the commented resource exactly");
-            check("portless".equals(yaml(read(fresh)).getString("connection-mode")), "Fresh default is portless");
+            check("port".equals(yaml(read(fresh)).getString("connection-mode")), "Fresh default is classic TCP");
             prepare(fresh);
             check(Arrays.equals(bundled, Files.readAllBytes(fresh)), "Restart preserves fresh file byte for byte");
 

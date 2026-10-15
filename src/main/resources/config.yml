@@ -5,7 +5,7 @@
 # Ardindan Zonely panelinde Portlu secip sunucunun IP adresini, asagidaki socketPort
 # degerini ve socketPassword sifresini ayni sekilde girin.
 # Portlu kullanmak icin asagidaki degeri 'port' yapin. Degisiklikten sonra sunucuyu yeniden baslatin.
-connection-mode: portless
+connection-mode: port
 # Yalnizca PORTSUZ modda kullanilir: Zonely sitenizin adresini girin.
 # Ornek: https://siteadresin.com (sondaki / fark etmez). PORTLU modda bos kalabilir.
 relay-url: ""

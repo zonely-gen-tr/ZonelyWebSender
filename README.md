@@ -2,7 +2,7 @@
 
 ZonelyWebSender, Minecraft sunucuna uzaktan konsol komutu ve sohbet mesajı göndermeni sağlayan bir eklentidir. Mağaza teslimatlarını, oyuncu ödüllerini ve yönetim komutlarını sunucuna ulaştırmak için kullanabilirsin.
 
-[JAR indir](https://github.com/zonely-gen-tr/ZonelyWebSender/releases/tag/v1.0.0-beta.6) · [Kurulum](docs/AYARLAR.md)
+[JAR indir](https://github.com/zonely-gen-tr/ZonelyWebSender/releases/tag/v1.0.0-beta.7) · [Kurulum](docs/AYARLAR.md)
 
 **Sürüm hedefi:** Minecraft 1.8.8 ve üzeri Spigot/Paper; güncel 26.3 serisi dahil. Geniş sürüm desteği için Bukkit altyapısını kullanır.
 

@@ -4,6 +4,8 @@ Dosya: `plugins/ZonelyWebSender/config.yml`
 
 [Yayınlar sayfasından JAR indir](https://github.com/zonely-gen-tr/ZonelyWebSender/releases), `plugins` klasörüne ekle ve ayar dosyasının oluşması için sunucuyu bir kez başlat.
 
+İlk kurulumda varsayılan bağlantı türü **Portlu** (`connection-mode: port`). Portsuz kullanmak için bu değeri `portless` olarak değiştir. Güncelleme mevcut bağlantı seçimini korur.
+
 Beta.6 ve üzeri, ayarların üzerindeki `#` açıklamalarını korur. Önceki sürümde açıklamalar silindiyse JAR'ı güncelleyip sunucuyu yeniden başlatman yeterli; mevcut adres, şifre ve port değerleri korunarak açıklamalar geri eklenir. Config dosyasını silmen gerekmez.
 
 ## Portsuz bağlantı
