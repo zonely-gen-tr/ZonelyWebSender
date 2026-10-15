@@ -4,7 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
+import tc.yigit.shared.ConfigFile;
 import tc.yigit.shared.SocketConfig;
 import tc.yigit.shared.SocketServer;
 import tc.yigit.shared.UtilSocket;
@@ -15,26 +19,17 @@ public class BukkitMain extends JavaPlugin implements Listener {
     FileConfiguration config;
     private PortlessRelay relay;
     
-    public BukkitMain(){
-        this.config = this.getConfig();
-    }
-    
     public void onEnable() {
         BukkitMain.instance = this;
         SocketConfig.status = "Bukkit";
         
-        this.config.addDefault("socketPort", SocketConfig.port);
-        this.config.addDefault("socketPassword", SocketConfig.password);
-        this.config.addDefault("senderPrefix", SocketConfig.prefix);
-        this.config.addDefault("wrongPassword", SocketConfig.wrongPassword);
-        this.config.addDefault("wrongData", SocketConfig.wrongData);
-        this.config.addDefault("succesfullyLogin", SocketConfig.succesfullyLogin);
-        this.config.addDefault("consoleInfo", SocketConfig.consoleInfo);
-        this.config.addDefault("commandPermission", SocketConfig.commandPermission);
-        this.config.addDefault("nothavePerm", SocketConfig.nothavePerm);
-        this.config.addDefault("pluginReloaded", SocketConfig.pluginReloaded);
-        this.config.options().copyDefaults(true);
-        this.saveConfig();        
+        try (InputStream defaults = this.getResource("config.yml")) {
+            ConfigFile.prepare(new File(this.getDataFolder(), "config.yml"), defaults);
+        } catch (IOException error) {
+            this.getLogger().severe("config.yml hazirlanamadi. Dosya izinlerini ve YAML yazimini kontrol edin.");
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
         this.configLoad();
         
         this.getServer().getPluginManager().registerEvents(this, this);
