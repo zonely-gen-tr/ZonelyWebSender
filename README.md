@@ -4,6 +4,8 @@ ZonelyWebSender, Minecraft sunucuna uzaktan konsol komutu ve sohbet mesajı gön
 
 [JAR indir](https://github.com/zonely-gen-tr/ZonelyWebSender/releases/tag/v1.0.0-beta.7) · [Kurulum](docs/AYARLAR.md)
 
+Forum tanıtımı: [Başlık](docs/TANITIM-BASLIK.txt) · [BBCode](docs/SPIGOTMC-BBCODE.txt)
+
 **Sürüm hedefi:** Minecraft 1.8.8 ve üzeri Spigot/Paper; güncel 26.3 serisi dahil. Geniş sürüm desteği için Bukkit altyapısını kullanır.
 
 ![Özellikler](docs/assets/zonelywebsender-features-v4.svg)

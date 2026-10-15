@@ -1,35 +1,56 @@
 [CENTER]
 [IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-cover-v4.png[/IMG]
-[SIZE=5][B]ZonelyWebSender[/B][/SIZE]
-Minecraft sunucuna uzaktan komut ve mesaj gönder.
-Mağaza teslimatlarını, oyuncu ödüllerini ve yönetim işlemlerini sunucuna ulaştır.
+[SIZE=6][B]ZonelyWebSender[/B][/SIZE]
+[SIZE=4]Panelin ile Minecraft sunucun arasında bağlantı kur.[/SIZE]
 
-[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/releases']JAR İndir[/URL]
-[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/blob/main/docs/AYARLAR.md']Kurulum Rehberi[/URL]
+Mağaza teslimatlarını, oyuncu ödüllerini ve yönetim komutlarını sunucuna ulaştır.
+İhtiyacına göre [B]Portlu[/B] veya [B]Portsuz[/B] bağlantıyı seç.
+
+[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/releases'][B]JAR İndir[/B][/URL]
+•
+[URL='https://github.com/zonely-gen-tr/ZonelyWebSender'][B]Kaynak Kodları[/B][/URL]
+•
+[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/blob/main/docs/AYARLAR.md'][B]Kurulum Rehberi[/B][/URL]
 [/CENTER]
 
-[B]ZonelyWebSender ne işe yarar?[/B]
-ZonelyWebSender, bağlı panelden gönderilen konsol komutlarını Minecraft sunucunda çalıştırır ve sohbet mesajlarını oyuncularına ulaştırır. Portlu ve portsuz bağlantı seçenekleriyle sunucuna uygun bağlantı türünü seçebilirsin.
-
-[B]Sürüm hedefi:[/B] Minecraft 1.8.8 ve üzeri Spigot/Paper; güncel 26.3 serisi dahil.
-
-[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-features-v4.png[/IMG]
-
+[SIZE=5][B]Neler yapabilirsin?[/B][/SIZE]
 [LIST]
-[*]Portsuz HTTPS bağlantısı
-[*]Klasik TCP bağlantısı
-[*]Uzaktan komut ve mesaj gönderme
-[*]Kolay kurulum
+[*]Panelden sunucu konsoluna komut gönder.
+[*]Oyunculara sohbet mesajı ilet.
+[*]Mağaza satın alımlarının teslimat komutlarını sunucuda çalıştır.
+[*]Oyuncu ödüllerini ve yönetim işlemlerini panel üzerinden yürüt.
 [/LIST]
 
-[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-setup-v4.png[/IMG]
+[CENTER]
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-features-v4.png[/IMG]
+[/CENTER]
 
-[B]Kurulum[/B]
+[SIZE=5][B]İki bağlantı seçeneği[/B][/SIZE]
+
+[B]Portlu bağlantı[/B]
+Klasik WebSender TCP bağlantısını kullanır. Hosting firmanın sağladığı erişilebilir bir TCP portunu, sunucu adresini ve bağlantı şifreni panelle aynı şekilde ayarlaman yeterlidir. WebSender portu, Minecraft oyun portundan farklı olmalıdır.
+
+[B]Portsuz bağlantı[/B]
+Minecraft sunucun, Zonely sitene HTTPS üzerinden bağlantı başlatır. Ek bir gelen bağlantı portu açman gerekmez. Site adresini ve panelde belirlediğin bağlantı şifresini config dosyasına girersin.
+
+[SIZE=5][B]Kurulum[/B][/SIZE]
 [LIST=1]
-[*]Yayınlar sayfasından JAR dosyasını indir.
-[*]JAR'ı sunucunun plugins klasörüne ekle ve sunucuyu bir kez başlat.
+[*]GitHub Releases sayfasından JAR dosyasını indir.
+[*]JAR'ı Minecraft sunucunun plugins klasörüne ekle ve sunucuyu bir kez başlat.
 [*]plugins/ZonelyWebSender/config.yml dosyasını aç.
-[*]Portsuz kullanımda bağlantı türünü portless seç; relay-url alanına yalnızca site adresini (https://siteadresin.com), socketPassword alanına sunucu şifreni gir. Adresin sonunda / olması fark etmez. Portlu kullanımda port seç; port ve şifreyi panelle aynı ayarla.
-[*]Sunucunu yeniden başlat ve panelden bir deneme komutu gönder.
+[*]İlk kurulumda Portlu seçilidir. Portlu kullanım için connection-mode değerini port; portsuz kullanım için portless yap.
+[*]Bağlantı bilgilerini paneldeki sunucuyla eşleştir.
+[*]Sunucuyu yeniden başlat ve panelden bir deneme komutu gönder.
 [/LIST]
-Portsuz kullanım için panelinin ZonelyWebSender bağlantısını desteklemesi gerekir. Her sunucu için farklı bir şifre kullan.
+
+[B]Portsuz kullanımda:[/B] relay-url alanına yalnızca site adresini yazman yeterlidir:
+[CODE]https://siteadresin.com[/CODE]
+Adresin sonunda / olması fark etmez. Panelinin ZonelyWebSender bağlantısını desteklemesi gerekir. Her sunucuya farklı bir bağlantı şifresi ver.
+
+[B]Açıklamalı config:[/B] Bağlantı, şifre ve port ayarlarının üzerinde kurulum açıklamaları bulunur.
+
+[B]Sürüm hedefi:[/B] Minecraft 1.8.8 ve üzeri Spigot/Paper.
+
+[CENTER]
+[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/releases'][SIZE=5][B]ZonelyWebSender'ı İndir[/B][/SIZE][/URL]
+[/CENTER]
