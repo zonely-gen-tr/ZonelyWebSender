@@ -48,7 +48,7 @@ if (Test-Path $metaPath) { Remove-Item -Recurse -Force -LiteralPath $metaPath }
 Copy-Item -Force -Recurse (Join-Path $project 'src/main/resources/*') $classes
 $out = Join-Path $project 'dist'
 New-Item -ItemType Directory -Force $out | Out-Null
-$jarPath = Join-Path $out 'ZonelyWebSender-1.0.0-beta.2.jar'
+$jarPath = Join-Path $out 'ZonelyWebSender-1.0.0-beta.3.jar'
 & jar cf $jarPath -C $classes .
 if ($LASTEXITCODE -ne 0) { throw 'JAR olusturulamadi' }
 

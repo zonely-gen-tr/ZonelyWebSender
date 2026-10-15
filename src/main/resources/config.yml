@@ -1,8 +1,7 @@
 # TCP (port) ve HTTPS (portless). Portsuz mod gelen TCP portu acmaz.
 connection-mode: portless
-# Sunucunuza ait HTTPS baglanti adresi ve sunucu kimligi.
+# Sunucunuza ait HTTPS baglanti adresi.
 relay-url: ""
-server-id: 0
 # Sunucunuza ait baglanti sifresi. YAML ozel karakterleri icin tirnak kullanin.
 socketPassword: "BURAYA_EN_AZ_12_KARAKTER_SIFRE"
 poll-ticks: 20

@@ -17,6 +17,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.security.MessageDigest;
 import java.util.Base64;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
@@ -37,18 +38,22 @@ public final class PortlessRelay {
 
     public void start() {
         endpoint = plugin.getConfig().getString("relay-url", "").trim();
-        int serverId = plugin.getConfig().getInt("server-id", 0);
         String password = plugin.getConfig().getString("socketPassword", "");
         int pollTicks = Math.max(20, plugin.getConfig().getInt("poll-ticks", 20));
-        if (serverId <= 0 || password.length() < 12 || password.equals("BURAYA_EN_AZ_12_KARAKTER_SIFRE") || !endpoint.startsWith("https://")) {
-            plugin.getLogger().severe("Portsuz mod: HTTPS relay-url, server-id ve en az 12 karakterli socketPassword gerekli.");
+        if (password.getBytes(StandardCharsets.UTF_8).length < 12 || password.equals("BURAYA_EN_AZ_12_KARAKTER_SIFRE") || !endpoint.startsWith("https://")) {
+            plugin.getLogger().severe("Portsuz mod: HTTPS baglanti adresi ve en az 12 karakterli sifre gerekli.");
             plugin.getServer().getPluginManager().disablePlugin(plugin);
             return;
         }
-        auth = "Basic " + Base64.getEncoder().encodeToString((serverId + ":" + password).getBytes(StandardCharsets.UTF_8));
+        auth = "Basic " + Base64.getEncoder().encodeToString(("websender:" + password).getBytes(StandardCharsets.UTF_8));
         plugin.getDataFolder().mkdirs();
-        stateFile = new File(plugin.getDataFolder(), "relay-state-" + serverId + ".txt");
-        try { loadState(); }
+        try {
+            byte[] digest = MessageDigest.getInstance("SHA-256").digest(endpoint.getBytes(StandardCharsets.UTF_8));
+            StringBuilder key = new StringBuilder();
+            for (int i = 0; i < 8; i++) key.append(String.format("%02x", digest[i] & 0xff));
+            stateFile = new File(plugin.getDataFolder(), "relay-state-" + key + ".txt");
+            loadState();
+        }
         catch (Exception error) {
             plugin.getLogger().log(Level.SEVERE, "Portsuz komut kaydi okunamadi; tekrar teslim riski nedeniyle eklenti kapatiliyor.", error);
             plugin.getServer().getPluginManager().disablePlugin(plugin);
@@ -57,7 +62,7 @@ public final class PortlessRelay {
         task = plugin.getServer().getScheduler().runTaskTimerAsynchronously(plugin, new Runnable() {
             @Override public void run() { poll(); }
         }, 20L, pollTicks);
-        plugin.getLogger().info("WebSender kaynak tabanli HTTPS modu etkin. Yeni gelen TCP portu acilmiyor.");
+        plugin.getLogger().info("HTTPS baglantisi etkin.");
     }
 
     public void stop() { if (task != null) task.cancel(); }
