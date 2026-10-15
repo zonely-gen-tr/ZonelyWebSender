@@ -1,6 +1,6 @@
 name: ZonelyWebSender
 main: tc.yigit.bukkit.BukkitMain
-version: 1.0.0-beta.3
+version: 1.0.0-beta.4
 description: Zonely için portsuz HTTPS WebSender köprüsü.
 commands:
   websender:

@@ -14,11 +14,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.security.MessageDigest;
 import java.util.Base64;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 
@@ -37,10 +40,16 @@ public final class PortlessRelay {
     public PortlessRelay(BukkitMain plugin) { this.plugin = plugin; }
 
     public void start() {
-        endpoint = plugin.getConfig().getString("relay-url", "").trim();
+        try {
+            endpoint = resolveEndpoint(plugin.getConfig().getString("relay-url", ""));
+        } catch (IllegalArgumentException error) {
+            plugin.getLogger().severe("Portsuz mod: gecerli HTTPS site adresinizi relay-url alanina yazin.");
+            plugin.getServer().getPluginManager().disablePlugin(plugin);
+            return;
+        }
         String password = plugin.getConfig().getString("socketPassword", "");
         int pollTicks = Math.max(20, plugin.getConfig().getInt("poll-ticks", 20));
-        if (password.getBytes(StandardCharsets.UTF_8).length < 12 || password.equals("BURAYA_EN_AZ_12_KARAKTER_SIFRE") || !endpoint.startsWith("https://")) {
+        if (password.getBytes(StandardCharsets.UTF_8).length < 12 || password.equals("BURAYA_EN_AZ_12_KARAKTER_SIFRE")) {
             plugin.getLogger().severe("Portsuz mod: HTTPS baglanti adresi ve en az 12 karakterli sifre gerekli.");
             plugin.getServer().getPluginManager().disablePlugin(plugin);
             return;
@@ -66,6 +75,39 @@ public final class PortlessRelay {
     }
 
     public void stop() { if (task != null) task.cancel(); }
+
+    private static String resolveEndpoint(String address) {
+        if (address == null || address.trim().isEmpty()) {
+            throw new IllegalArgumentException("Site adresi bos");
+        }
+        String value = address.trim();
+        if (!value.contains("://")) value = "https://" + value;
+        try {
+            URI site = new URI(value);
+            if (!"https".equalsIgnoreCase(site.getScheme()) || site.getHost() == null
+                    || site.getUserInfo() != null || site.getFragment() != null
+                    || site.getPort() == 0 || site.getPort() > 65535) {
+                throw new IllegalArgumentException("Gecersiz HTTPS site adresi");
+            }
+            String path = site.getRawPath() == null ? "" : site.getRawPath();
+            while (path.endsWith("/")) path = path.substring(0, path.length() - 1);
+            String controller = "/Files/Controllers/ControllersAll.php";
+            String legacy = "/Files/Src/MVC/Http/Endpoints/websender-relay.php";
+            if (path.endsWith(controller)) {
+                path = path.substring(0, path.length() - controller.length());
+            } else if (path.endsWith(legacy)) {
+                path = path.substring(0, path.length() - legacy.length());
+            } else if (site.getRawQuery() != null) {
+                throw new IllegalArgumentException("Site adresinde sorgu olmamali");
+            }
+            int port = site.getPort() == 443 ? -1 : site.getPort();
+            URI origin = new URI("https", null, site.getHost().toLowerCase(Locale.ROOT), port, null, null, null);
+            return origin.toASCIIString() + path + controller
+                    + "?main=Handlers&container=MainHandlers&zonely_websender_relay=1";
+        } catch (URISyntaxException error) {
+            throw new IllegalArgumentException("Gecersiz HTTPS site adresi", error);
+        }
+    }
 
     private void poll() {
         if (!busy.compareAndSet(false, true)) return;

@@ -1,6 +1,6 @@
 # TCP (port) ve HTTPS (portless). Portsuz mod gelen TCP portu acmaz.
 connection-mode: portless
-# Sunucunuza ait HTTPS baglanti adresi.
+# Yalnizca Zonely site adresiniz: https://siteadresin.com (sondaki / fark etmez).
 relay-url: ""
 # Sunucunuza ait baglanti sifresi. YAML ozel karakterleri icin tirnak kullanin.
 socketPassword: "BURAYA_EN_AZ_12_KARAKTER_SIFRE"

@@ -24,7 +24,7 @@ const cover = svg('ZonelyWebSender', 360,
   icon('shield', 320, 266, 26) + text('Güvenli bağlantı', 362, 287, 21, '#eff6ff', 600) +
   icon('terminal', 596, 266, 26) + text('Kolay kurulum', 638, 287, 21, '#eff6ff', 600) +
   icon('server', 997, 97, 120, '#60a5fa') +
-  text('1.0.0-beta.3', 1000, 274, 18, '#94a3b8'),
+  text('1.0.0-beta.4', 1000, 274, 18, '#94a3b8'),
   'ZonelyWebSender Minecraft eklentisi.');
 
 let features = text('Bağlantı senin seçimin.', 48, 61, 34, '#fff', 700);
@@ -51,7 +51,7 @@ const flow = svg('ZonelyWebSender kurulumu', 315,
   }).join(''),
   'JAR dosyasını ekle, bağlantı ayarlarını düzenle ve sunucunu başlat.');
 
-fs.writeFileSync(path.join(target, 'zonelywebsender-cover-v3.svg'), cover);
-fs.writeFileSync(path.join(target, 'zonelywebsender-features-v3.svg'), svg('ZonelyWebSender özellikleri', 405, features, 'Portsuz kullanım, uzaktan komut, güvenli bağlantı ve kolay kurulum.'));
-fs.writeFileSync(path.join(target, 'zonelywebsender-setup-v3.svg'), flow);
+fs.writeFileSync(path.join(target, 'zonelywebsender-cover-v4.svg'), cover);
+fs.writeFileSync(path.join(target, 'zonelywebsender-features-v4.svg'), svg('ZonelyWebSender özellikleri', 405, features, 'Portsuz kullanım, uzaktan komut, güvenli bağlantı ve kolay kurulum.'));
+fs.writeFileSync(path.join(target, 'zonelywebsender-setup-v4.svg'), flow);
 console.log('3 SVG tanıtım görseli üretildi.');

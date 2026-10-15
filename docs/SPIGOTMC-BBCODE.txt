@@ -1,5 +1,5 @@
 [CENTER]
-[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-cover-v3.png[/IMG]
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-cover-v4.png[/IMG]
 [SIZE=5][B]ZonelyWebSender[/B][/SIZE]
 Minecraft sunucuna uzaktan komut ve mesaj gönder.
 Mağaza teslimatlarını, oyuncu ödüllerini ve yönetim işlemlerini sunucuna ulaştır.
@@ -13,7 +13,7 @@ ZonelyWebSender, bağlı panelden gönderilen konsol komutlarını Minecraft sun
 
 [B]Sürüm hedefi:[/B] Minecraft 1.8.8 ve üzeri Spigot/Paper; güncel 26.3 serisi dahil.
 
-[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-features-v3.png[/IMG]
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-features-v4.png[/IMG]
 
 [LIST]
 [*]Portsuz HTTPS bağlantısı
@@ -22,14 +22,14 @@ ZonelyWebSender, bağlı panelden gönderilen konsol komutlarını Minecraft sun
 [*]Kolay kurulum
 [/LIST]
 
-[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-setup-v3.png[/IMG]
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-setup-v4.png[/IMG]
 
 [B]Kurulum[/B]
 [LIST=1]
 [*]Yayınlar sayfasından JAR dosyasını indir.
 [*]JAR'ı sunucunun plugins klasörüne ekle ve sunucuyu bir kez başlat.
 [*]plugins/ZonelyWebSender/config.yml dosyasını aç.
-[*]Portsuz kullanımda bağlantı türünü portless seç; panelinin verdiği HTTPS adresini ve sunucu şifreni gir. Portlu kullanımda port seç; port ve şifreyi panelle aynı ayarla.
+[*]Portsuz kullanımda bağlantı türünü portless seç; relay-url alanına yalnızca site adresini (https://siteadresin.com), socketPassword alanına sunucu şifreni gir. Adresin sonunda / olması fark etmez. Portlu kullanımda port seç; port ve şifreyi panelle aynı ayarla.
 [*]Sunucunu yeniden başlat ve panelden bir deneme komutu gönder.
 [/LIST]
 Portsuz kullanım için panelinin ZonelyWebSender bağlantısını desteklemesi gerekir. Her sunucu için farklı bir şifre kullan.

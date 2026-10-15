@@ -8,12 +8,12 @@ Dosya: `plugins/ZonelyWebSender/config.yml`
 
 ```yaml
 connection-mode: portless
-relay-url: 'HTTPS_BAGLANTI_ADRESIN'
+relay-url: 'https://siteadresin.com'
 socketPassword: 'KENDI_UZUN_SIFRENI_YAZ'
 poll-ticks: 20
 ```
 
-Panelinin verdiği HTTPS bağlantı adresini `relay-url` alanına, aynı sunucu için belirlediğin şifreyi `socketPassword` alanına yaz. Her sunucuya farklı, en az 12 karakterli şifre belirle. Panelde de portsuz bağlantıyı seç ve sunucuyu yeniden başlat. Oyun sunucusunda ek port açman gerekmez.
+`relay-url` alanına yalnızca Zonely sitenin adresini, `socketPassword` alanına panelde aynı sunucu için belirlediğin şifreyi yaz. Bağlantı yolu otomatik tamamlanır. `https://siteadresin.com` ve `https://siteadresin.com/` aynı şekilde çalışır. `siteadresin.com` yazarsan HTTPS otomatik eklenir. Her sunucuya farklı, en az 12 karakterli şifre belirle. Panelde de portsuz bağlantıyı seç ve sunucuyu yeniden başlat. Oyun sunucusunda ek port açman gerekmez.
 
 ## Portlu bağlantı
 
