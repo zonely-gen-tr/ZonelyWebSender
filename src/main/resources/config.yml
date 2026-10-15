@@ -1,0 +1,17 @@
+# TCP (port) ve HTTPS (portless). Portsuz mod gelen TCP portu acmaz.
+connection-mode: portless
+# Sunucunuza ait HTTPS baglanti adresi ve sunucu kimligi.
+relay-url: ""
+server-id: 0
+# Sunucunuza ait baglanti sifresi. YAML ozel karakterleri icin tirnak kullanin.
+socketPassword: "BURAYA_EN_AZ_12_KARAKTER_SIFRE"
+poll-ticks: 20
+socketPort: 9876
+senderPrefix: "&b[ZonelyWebSender]"
+wrongPassword: "Wrong password"
+wrongData: "Invalid request"
+succesfullyLogin: "Authenticated"
+consoleInfo: "true"
+commandPermission: "websender.admin"
+nothavePerm: "No permission"
+pluginReloaded: "Ayarlar okundu. Baglanti modu, port, sifre veya relay adresi degisti ise sunucuyu yeniden baslatin."

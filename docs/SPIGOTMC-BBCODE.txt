@@ -1,0 +1,20 @@
+[CENTER]
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-cover.png[/IMG]
+[SIZE=5][B]ZonelyWebSender[/B][/SIZE]
+Minecraft sunucuna uzaktan komut ve mesaj gönder.
+
+[URL='https://github.com/zonely-gen-tr/ZonelyWebSender/releases']JAR İndir[/URL]
+[/CENTER]
+
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-features.png[/IMG]
+
+[LIST]
+[*]Portsuz HTTPS bağlantısı
+[*]Klasik TCP bağlantısı
+[*]Uzaktan komut ve mesaj gönderme
+[*]Kolay kurulum
+[/LIST]
+
+[IMG]https://raw.githubusercontent.com/zonely-gen-tr/ZonelyWebSender/main/docs/assets/zonelywebsender-flow.png[/IMG]
+
+[B]Kurulum:[/B] JAR'ı plugins klasörüne ekle, config.yml ayarlarını düzenle ve sunucunu yeniden başlat.
