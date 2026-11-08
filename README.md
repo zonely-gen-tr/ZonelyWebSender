@@ -1,26 +1,26 @@
 ![ZonelyWebSender](docs/assets/zonelywebsender-cover-v4.svg)
 
-ZonelyWebSender, Minecraft sunucuna uzaktan konsol komutu ve sohbet mesajı göndermeni sağlayan bir eklentidir. Mağaza teslimatlarını, oyuncu ödüllerini ve yönetim komutlarını sunucuna ulaştırmak için kullanabilirsin.
+Send remote console commands and chat messages to your Minecraft server. Use ZonelyWebSender for store deliveries, player rewards and server administration.
 
-[JAR indir](https://github.com/zonely-gen-tr/ZonelyWebSender/releases/tag/v1.0.0-beta.7) · [Kurulum](docs/AYARLAR.md)
+[Download JAR](https://github.com/zonely-gen-tr/ZonelyWebSender/releases/tag/v1.0.0-beta.7) · [Configuration](docs/AYARLAR.md)
 
-Forum tanıtımı: [Başlık](docs/TANITIM-BASLIK.txt) · [BBCode](docs/SPIGOTMC-BBCODE.txt)
+Forum resources: [Title](docs/TANITIM-BASLIK.txt) · [BBCode](docs/SPIGOTMC-BBCODE.txt)
 
-**Sürüm hedefi:** Minecraft 1.8.8 ve üzeri Spigot/Paper; güncel 26.3 serisi dahil. Geniş sürüm desteği için Bukkit altyapısını kullanır.
+**Compatibility target:** Minecraft 1.8.8 and later on Spigot/Paper, including the 26.3 series. The plugin uses Bukkit APIs for broad version support.
 
-![Özellikler](docs/assets/zonelywebsender-features-v4.svg)
+![Features](docs/assets/zonelywebsender-features-v4.svg)
 
-- **Portsuz kullanım:** Sunucu bağlantıyı HTTPS üzerinden başlatır; oyun sunucusunda ek bir gelen bağlantı portu açman gerekmez.
-- **Portlu kullanım:** Klasik WebSender bağlantısını kullanmaya devam edebilirsin.
-- **Komut ve mesaj:** Konsol komutlarını çalıştırabilir, oyunculara mesaj gönderebilirsin.
-- **Şifreyle bağlantı:** Panelde ve eklentide aynı bağlantı şifresini kullanırsın.
+- **Portless mode:** The server initiates an outbound HTTPS connection. No additional inbound port is required on the game server.
+- **Port-based mode:** Continue using a classic WebSender connection.
+- **Commands and messages:** Run console commands and send messages to players.
+- **Shared password:** Configure the same connection password in the panel and plugin.
 
-![Kurulum](docs/assets/zonelywebsender-setup-v4.svg)
+![Installation](docs/assets/zonelywebsender-setup-v4.svg)
 
-1. [Yayınlar sayfasından](https://github.com/zonely-gen-tr/ZonelyWebSender/releases) JAR dosyasını indir.
-2. Dosyayı Minecraft sunucunun `plugins` klasörüne koy ve sunucuyu bir kez başlat.
-3. `plugins/ZonelyWebSender/config.yml` dosyasını aç.
-4. Kullanacağın bağlantı türünü seç; [ayarlar rehberindeki](docs/AYARLAR.md) örneğe göre bağlantı bilgilerini yaz.
-5. Sunucuyu yeniden başlat ve panelden bir deneme komutu gönder.
+1. Download the JAR from [Releases](https://github.com/zonely-gen-tr/ZonelyWebSender/releases).
+2. Place it in your Minecraft server's `plugins` folder and start the server once.
+3. Open `plugins/ZonelyWebSender/config.yml`.
+4. Choose a connection mode and enter the settings shown in the [configuration guide](docs/AYARLAR.md).
+5. Restart the server and send a test command from the panel.
 
-Portsuz bağlantıda `relay-url` alanına yalnızca Zonely sitenin adresini yazman yeterlidir: `https://siteadresin.com`. Sonunda `/` olması fark etmez; bağlantı yolu otomatik tamamlanır. Panelinin ZonelyWebSender bağlantısını desteklemesi gerekir. Portlu bağlantıda kullandığın portun erişilebilir olması gerekir.
+For portless mode, set `relay-url` to your Zonely website address, such as `https://siteadresin.com`. A trailing slash is optional and the connection path is completed automatically. Your panel must support the ZonelyWebSender integration. For port-based mode, the configured port must be reachable.
